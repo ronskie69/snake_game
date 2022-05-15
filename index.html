@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="nogskiee">
+    <meta name="description" content="Sneaky Snakey: Classic Snake Game">
+    <title>Sneaky Snakey</title>
+    <link rel="icon" href="./images/snakey.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Lato', sans-serif;
+        }
+        body {
+            background-color: #4e4949;
+        }
+        .container {
+            color: #fff;
+            height: 100vh;
+            padding: 10px 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .header {
+            display: flex;
+        }
+        .header img {
+            height: 65px;
+            width: 65px;
+            margin-right: 10px;
+        }
+        .canvas { 
+            background-color: #000;
+            margin-top: 20px;
+            border: inset 2px #ffff;
+            box-shadow: 1px 3px 9px #000;
+        }
+        @keyframes collideAnim {
+            from { background: linear-gradient(30deg, rgb(99, 97, 97), #ff5555);}
+            to { background-color: #000;}
+        }
+        .collides { 
+            animation: collideAnim .4s linear infinite alternate;
+        }
+        kbd {
+            border: solid .8px;
+            padding: 5px;
+            background-color: #f4f5f6;
+            border-radius: 4px;
+            color: #222;
+        }
+        .controls-pc {
+            display: none;
+            text-align: center;
+            color: #f4f5f6;
+            line-height: 40px;
+            letter-spacing: 1.5px;
+        }
+        .controls-mobile {
+            margin-top: 10px;
+            display: none;
+        }
+        button {
+            padding: 8px;
+            outline: none;
+            background-color: #000;
+            color: #fff;
+            font-size: 18px;
+            margin: 5px;
+            border-radius: 5px;
+            box-shadow: 1px 3px 9px #000;
+        }
+        button:hover, button:active {
+            transform: scale(.9);
+            cursor: pointer;
+            filter: brightness(90%);
+        }
+        .btn-upper {
+            display: block;
+            margin: auto;
+        }
+        .bottom-controls {
+            display: flex;
+            align-items: center;
+        }
+        @media only screen and (max-width: 720px) {
+            .container {
+               height: 100%;
+               width: 100%;
+            }
+            canvas {
+                height: 350px;
+                width: 350px;
+            }
+            button {
+                padding: 15px;
+            }
+            .controls-mobile {
+                display: block;
+            }
+        }
+        @media only screen and (min-width: 721px) {
+            .controls-pc{
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="./images/snakey.png" alt="">
+            <div class="heading">
+                <h1>Sneaky Snakey</h1>
+                <h4 style="text-align: center;">A Classic Snake Game</h4>
+            </div>
+        </div>
+        <canvas id="main" height="400" width="400" class="canvas"></canvas>
+        <div class="controls-pc">
+            <h3>Controls</h3>
+            <p>Press <kbd>W</kbd> to go up.
+             While <kbd>A</kbd> to go left.
+             Then <kbd>S</kbd> to go down.
+            Finally press <kbd>D</kbd> to go right. </p>
+        </div>
+        <div class="controls-mobile">
+            <button class="controller btn-upper">W</button>
+            <div class="bottom-controls">
+                <button class="controller">A</button>
+                <button class="controller">S</button>
+                <button class="controller">D</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script defer type="module" src="./js/main.js"></script>
+</html>

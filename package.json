@@ -1,0 +1,15 @@
+{
+  "name": "html",
+  "version": "1.0.0",
+  "description": "Sneaky Snakey: A Classic Snake Game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "snake",
+    "game"
+  ],
+  "author": "nogskieee",
+  "license": "ISC"
+}
